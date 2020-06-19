@@ -8,6 +8,9 @@ using namespace std;
 
 void loadg();
 
+#define main main_
+#define fma fma_
+
 //String 使用
 
 //プログラム中
@@ -50,9 +53,9 @@ int maint;
 
 //サブクラス
 //(ウエイト系
-void wait(int interval);
-void wait2(long stime, long etime,int FLAME_TIME);
-int rand(int Rand);
+static void wait(int interval);
+static void wait2(long stime, long etime,int FLAME_TIME);
+static int rand(int Rand);
 void end();
 
 //描画
