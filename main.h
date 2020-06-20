@@ -11,54 +11,54 @@ void loadg();
 #define main main_
 #define fma fma_
 
-//String g—p
+//String ä½¿ç”¨
 
-//ƒvƒƒOƒ‰ƒ€’†
+//ãƒ—ãƒ­ã‚°ãƒ©ãƒ ä¸­
 //main-10
-//ƒ^ƒCƒgƒ‹-100
+//ã‚¿ã‚¤ãƒˆãƒ«-100
 int main=100,maintm=0;
 
-//ƒXƒe[ƒW
+//ã‚¹ãƒ†ãƒ¼ã‚¸
 int stagecolor=0;
 int sta=1,stb=4,stc=0;
 
-//ƒNƒCƒbƒN
+//ã‚¯ã‚¤ãƒƒã‚¯
 int fast=1;
 
-//ƒgƒ‰ƒbƒv•\¦
+//ãƒˆãƒ©ãƒƒãƒ—è¡¨ç¤º
 int trap=1;
 
-//’†ŠÔƒQ[ƒg
+//ä¸­é–“ã‚²ãƒ¼ãƒˆ
 int tyuukan=0;
 
 
-//ƒXƒ^ƒbƒtƒ[ƒ‹
+//ã‚¹ã‚¿ãƒƒãƒ•ãƒ­ãƒ¼ãƒ«
 int ending=0;
 
 
-//ƒXƒe[ƒW“Ç‚İ‚İƒ‹[ƒv(‚¢‚¶‚ç‚È‚¢)
+//ã‚¹ãƒ†ãƒ¼ã‚¸èª­ã¿è¾¼ã¿ãƒ«ãƒ¼ãƒ—(ã„ã˜ã‚‰ãªã„)
 int stagerr,stagepoint;
-//ƒI[ƒo[ƒtƒ[‚³‚¹‚é
+//ã‚ªãƒ¼ãƒãƒ¼ãƒ•ãƒ­ãƒ¼ã•ã›ã‚‹
 int over=0;
 
-//ƒXƒe[ƒWƒXƒCƒbƒ`
+//ã‚¹ãƒ†ãƒ¼ã‚¸ã‚¹ã‚¤ãƒƒãƒ
 int stageonoff=0;
 
 
-//ƒƒCƒ“ƒvƒƒOƒ‰ƒ€
+//ãƒ¡ã‚¤ãƒ³ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
 void Mainprogram();
 void rpaint();
 int maint;
 
 
-//ƒTƒuƒNƒ‰ƒX
-//(ƒEƒGƒCƒgŒn
+//ã‚µãƒ–ã‚¯ãƒ©ã‚¹
+//(ã‚¦ã‚¨ã‚¤ãƒˆç³»
 static void wait(int interval);
 static void wait2(long stime, long etime,int FLAME_TIME);
 static int rand(int Rand);
 void end();
 
-//•`‰æ
+//æç”»
 int color;
 void setfont(int a);
 void setcolor(int red, int green, int blue);
@@ -82,7 +82,7 @@ void setno();
 int oto[151];
 void ot(int x);void bgmchange(int x);
 
-//•¶š
+//æ–‡å­—
 void str(string c,int a,int b);
 
 
@@ -96,27 +96,27 @@ void stagep();
 
 
 
-//1-ƒXƒe[ƒW
-//10-ƒXƒe[ƒW‘O
+//1-ã‚¹ãƒ†ãƒ¼ã‚¸
+//10-ã‚¹ãƒ†ãƒ¼ã‚¸å‰
 //
 
 
 
-//ƒ‹[ƒv
+//ãƒ«ãƒ¼ãƒ—
 int t,tt,t1,t2,t3,t4;
 
 
-//‰Šú‰»
+//åˆæœŸåŒ–
 int zxon,zzxon;
 
-//ƒL[ƒRƒ“ƒtƒBƒO
+//ã‚­ãƒ¼ã‚³ãƒ³ãƒ•ã‚£ã‚°
 int key,keytm;
 
-//OŠpŠÖ”
+//ä¸‰è§’é–¢æ•°
 double pai=3.1415926535;
 
 
-//’n–Ê
+//åœ°é¢
 #define smax 31
 int sx,sco;
 int sa[smax],sb[smax],sc[smax],sd[smax],stype[smax],sxtype[smax],sr[smax];
@@ -124,7 +124,7 @@ int sgtype[smax];
 
 
 
-//ƒvƒŒƒCƒ„[
+//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼
 int mainmsgtype;
 int ma,mb,mnobia,mnobib,mhp;
 int mc,md,macttype,atkon,atktm,mactsok,msstar,nokori=2,mactp,mact;
@@ -134,7 +134,7 @@ int mzimen,mrzimen,mkasok,mmuki,mmukitm,mjumptm,mkeytm,mcleartm;
 int mmutekitm,mmutekion;
 int mztm,mztype;
 int actaon[7];
-//ƒƒbƒZ[ƒW
+//ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
 int mmsgtm,mmsgtype;
 
 int mascrollmax=21000;//9000
@@ -142,7 +142,7 @@ int mascrollmax=21000;//9000
 
 
 
-//ƒuƒƒbƒN
+//ãƒ–ãƒ­ãƒƒã‚¯
 void tyobi(int x,int y,int type);
 void brockbreak(int t);
 #define tmax 641
@@ -150,12 +150,12 @@ int tco;
 int ta[tmax],tb[tmax],tc[tmax],td[tmax],thp[tmax],ttype[tmax];
 int titem[tmax],txtype[tmax];
 
-//ƒƒbƒZ[ƒWƒuƒƒbƒN
+//ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãƒ–ãƒ­ãƒƒã‚¯
 int tmsgtm,tmsgtype,tmsgx,tmsgy,tmsgnobix,tmsgnobiy,tmsg;
 void ttmsg();void txmsg(string x,int a);
 void setfont(int x,int y);
 
-//Œø‰Ê‚ğ‚½‚È‚¢ƒOƒ‰
+//åŠ¹æœã‚’æŒãŸãªã„ã‚°ãƒ©
 void eyobi(int xa,int xb,int xc,int xd,int xe,int xf,int xnobia,int xnobib,int xgtype,int xtm);
 #define emax 201
 int eco;
@@ -165,7 +165,7 @@ int egtype[emax];
 
 
 
-//“GƒLƒƒƒ‰
+//æ•µã‚­ãƒ£ãƒ©
 void ayobi(int xa,int xb,int xc,int xd,int xnotm,int xtype,int xxtype);
 void tekizimen();
 #define amax 24
@@ -178,21 +178,21 @@ int anotm[amax],anx[160],any[160];
 int atm[amax],a2tm[amax];
 int amsgtm[amax],amsgtype[amax];
 
-//“GoŒ»
+//æ•µå‡ºç¾
 #define bmax 81
 int bco;
 int ba[bmax],bb[bmax],btm[bmax];
 int btype[bmax],bxtype[bmax],bz[bmax];
 
 
-//”wŒi
+//èƒŒæ™¯
 #define nmax 41
 int nxxmax,nco;
 int na[nmax],nb[nmax],nc[nmax],nd[nmax],ntype[nmax];
 int ne[nmax],nf[nmax],ng[nmax],nx[nmax];
 
 
-//ƒŠƒtƒg
+//ãƒªãƒ•ãƒˆ
 #define srmax 21
 int srco;
 int sra[srmax],srb[srmax],src[srmax],srd[srmax],sre[srmax],srf[srmax];
@@ -204,30 +204,30 @@ int srsok[srmax],srmovep[srmax],srmove[srmax];
 
 
 
-//ƒXƒNƒ[ƒ‹”ÍˆÍ
+//ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ç¯„å›²
 int fx=0,fy=0,fzx,fzy,scrollx,scrolly;
-//‘S‘Ì‚Ìƒ|ƒCƒ“ƒg
+//å…¨ä½“ã®ãƒã‚¤ãƒ³ãƒˆ
 int fma=0,fmb=0;
-//‹­§ƒXƒNƒ[ƒ‹
+//å¼·åˆ¶ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«
 int kscroll=0;
-//‰æ–ÊƒTƒCƒY(ƒtƒ@ƒ~ƒRƒ“ƒTƒCƒY~2)(256-224)
+//ç”»é¢ã‚µã‚¤ã‚º(ãƒ•ã‚¡ãƒŸã‚³ãƒ³ã‚µã‚¤ã‚ºÃ—2)(256-224)
 int fxmax=48000,fymax=42000;
 
 
 
-//ƒXƒe[ƒW
+//ã‚¹ãƒ†ãƒ¼ã‚¸
 byte stagedate[17][2001];
 
-//‰æ–Ê•
+//ç”»é¢é»’
 int blacktm=1,blackx=0;
 
 
 
-//©—R‚È’l
+//è‡ªç”±ãªå€¤
 int xx[91];
 double xd[11];
 string xs[31];
 
 
-//ƒ^ƒCƒ}[‘ª’è
+//ã‚¿ã‚¤ãƒãƒ¼æ¸¬å®š
 long stime;
