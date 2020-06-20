@@ -1,0 +1,7 @@
+*.o
+syobon_action.exe
+syobon_action
+
+Log.txt
+
+/dxlib
