@@ -198,12 +198,12 @@ anx[3]=30;any[3]=44;
 //oto[2] = LoadSoundMem( "SE/1.wav" ) ;
 SetCreateSoundDataType(DX_SOUNDDATATYPE_MEMPRESS);
 oto[100]=LoadSoundMem( "BGM/field.ogg" ) ;
-ChangeVolumeSoundMem(50, oto[100]);
+ChangeVolumeSoundMem(192, oto[100]);
 oto[103]=LoadSoundMem( "BGM/dungeon.ogg" ) ;
-ChangeVolumeSoundMem(50, oto[103]);
+ChangeVolumeSoundMem(192, oto[103]);
 oto[104]=LoadSoundMem( "BGM/star4.ogg");
 oto[105]=LoadSoundMem( "BGM/castle.ogg");
-ChangeVolumeSoundMem(50, oto[105]);
+ChangeVolumeSoundMem(192, oto[105]);
 oto[106]=LoadSoundMem( "BGM/puyo.ogg");
 
 SetCreateSoundDataType(DX_SOUNDDATATYPE_MEMNOPRESS);
