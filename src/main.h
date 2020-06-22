@@ -8,15 +8,13 @@ using namespace std;
 
 void loadg();
 
-#define main main_
-#define fma fma_
 
 //String 使用
 
 //プログラム中
 //main-10
 //タイトル-100
-int main=100,maintm=0;
+int mains=100,maintm=0;
 
 //ステージ
 int stagecolor=0;
@@ -71,7 +69,7 @@ void fillrect(int a,int b,int c,int d);
 void drawarc(int a,int b,int c,int d);
 void fillarc(int a,int b,int c,int d);
 int grap[161][8],mgrap[51];
-int loadimage(string b);
+int loadimage(const TSTRING &b);
 int loadimage(int a,int x,int y,int r,int z);
 int mirror;
 void drawimage(int mx,int a,int b);
@@ -83,7 +81,7 @@ int oto[151];
 void ot(int x);void bgmchange(int x);
 
 //文字
-void str(string c,int a,int b);
+void str(const TSTRING &c,int a,int b);
 
 
 //)
@@ -152,7 +150,7 @@ int titem[tmax],txtype[tmax];
 
 //メッセージブロック
 int tmsgtm,tmsgtype,tmsgx,tmsgy,tmsgnobix,tmsgnobiy,tmsg;
-void ttmsg();void txmsg(string x,int a);
+void ttmsg();void txmsg(const TSTRING &x,int a);
 void setfont(int x,int y);
 
 //効果を持たないグラ
@@ -207,7 +205,7 @@ int srsok[srmax],srmovep[srmax],srmove[srmax];
 //スクロール範囲
 int fx=0,fy=0,fzx,fzy,scrollx,scrolly;
 //全体のポイント
-int fma=0,fmb=0;
+int fmx=0,fmy=0;
 //強制スクロール
 int kscroll=0;
 //画面サイズ(ファミコンサイズ×2)(256-224)
@@ -226,7 +224,7 @@ int blacktm=1,blackx=0;
 //自由な値
 int xx[91];
 double xd[11];
-string xs[31];
+TSTRING xs[31];
 
 
 //タイマー測定

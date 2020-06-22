@@ -1,8 +1,11 @@
 #include "main.h"
 
-// プログラムは WinMain から始まります
-int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,LPSTR lpCmdLine, int nCmdShow ){
+// プログラムは main から始まります
+int main(int argc, char const *argv[]) {
+//use UTF-8 encoding
 SetUseCharCodeFormat(DX_CHARCODEFORMAT_UTF8);
+//applog無効
+SetOutApplicationLogValidFlag(false);
 //画面サイズ設定
 SetGraphMode( fxmax/100 , fymax/100 , 16 ) ;
 //
@@ -10,9 +13,7 @@ SetWindowIconID(127);
 //最大化の防止
 ChangeWindowMode(TRUE ) ;
 //タイトルの変更
-SetMainWindowText( "しょぼんのアクション" ) ;
-//applog無効
-SetOutApplicationLogValidFlag(false);
+SetMainWindowText( "しょぼんのアクション" );
 
 
 // ＤＸライブラリ初期化処理(エラーが起きたら直ちに終了)
@@ -88,7 +89,7 @@ str(xs[3],10,10);
 */
 
 
-if (main==1 && zxon>=1){
+if (mains==1 && zxon>=1){
 
 
 //背景
@@ -111,13 +112,13 @@ drawimage(grap[ntype[t]][4],xx[0]/100-5,xx[1]/100);
 
 //51
 if (ntype[t]==100){
-DrawFormatString(xx[0]/100+fma,xx[1]/100+fmb,GetColor(255,255,255),"51");
+DrawFormatString(xx[0]/100+fmx,xx[1]/100+fmy,GetColor(255,255,255), "51");
 }
 
 if (ntype[t]==101)
-DrawFormatString(xx[0]/100+fma,xx[1]/100+fmb,GetColor(255,255,255),"ゲームクリアー");
+DrawFormatString(xx[0]/100+fmx,xx[1]/100+fmy,GetColor(255,255,255), "ゲームクリアー");
 if (ntype[t]==102)
-DrawFormatString(xx[0]/100+fma,xx[1]/100+fmb,GetColor(255,255,255),"プレイしてくれてありがとー");
+DrawFormatString(xx[0]/100+fmx,xx[1]/100+fmy,GetColor(255,255,255), "プレイしてくれてありがとー");
 
 }}//t
 
@@ -164,12 +165,12 @@ drawarc((xx[0])/100+15-1,(xx[1])/100,10,10);
 }//4
 
 //if (egtype[t]==1){
-//drawimage(image[0],xx[0]/100+fma+5,xx[1]/100+fmb+5,0,0,10,10);
+//drawimage(image[0],xx[0]/100+fmx+5,xx[1]/100+fmy+5,0,0,10,10);
 //おもしろ
-//drawimage(image[2],xx[0]/100+fma,xx[1]/100+fmb,0,0,20,20);
+//drawimage(image[2],xx[0]/100+fmx,xx[1]/100+fmy,0,0,20,20);
 //}
 //if (egtype[t]==2)
-//drawimage(image[11],xx[0]/100+fma,xx[1]/100+fmb,0,0,25,16);
+//drawimage(image[11],xx[0]/100+fmx,xx[1]/100+fmy,0,0,25,16);
 
 
 }
@@ -237,26 +238,26 @@ if (srgtype[t]==0){setcolor(200,120,0);}
 if (srgtype[t]==1){setcolor(40,40,240);}
 if (srgtype[t]>=2 && srgtype[t]<=6)setcolor(240,240,40);
 if (srgtype[t]==7)setcolor(0,240,0);
-fillrect(xx[0]/100+fma,xx[1]/100+fmb, src[t]/100, srd[t]/100);
+fillrect(xx[0]/100+fmx,xx[1]/100+fmy, src[t]/100, srd[t]/100);
 setc0();
 if (srgtype[t]==0){setcolor(160,80,0);}
 if (srgtype[t]==1){setcolor(0,0,200);}
 if (srgtype[t]>=2 && srgtype[t]<=6)setcolor(200,200,0);
 if (srgtype[t]==7)setcolor(0,210,0);
-drawrect(xx[0]/100+fma,xx[1]/100+0+fmb, src[t]/100, srd[t]/100);
+drawrect(xx[0]/100+fmx,xx[1]/100+0+fmy, src[t]/100, srd[t]/100);
 }}
 
 //(トゲ)
 if (srtype[t]==1 || srtype[t]==2){
 if (srtype[t]==2)setre2();
-//drawimage(image[6],xx[0]/100+fma,xx[1]/100+fmb,0,0,src[t]/100, srd[t]/100+2);
+//drawimage(image[6],xx[0]/100+fmx,xx[1]/100+fmy,0,0,src[t]/100, srd[t]/100+2);
 
 xx[20]=2000;
 for (tt=0;tt<=src[t]/xx[20];tt++){
 xx[6]=xx[20]/100;xx[7]=xx[20]/100;if (src[t]/xx[20]==tt){xx[7]=(src[t]%xx[20])/100;}
 if (xx[6]<=0)xx[6]=1;if (xx[7]<=0)xx[7]=1;
-//drawimage(im[0],xx[0]/100+fma+tt*(xx[6]),xx[1]/100+fmb,5,0,xx[7],10);
-drawimage(image[6],xx[0]/100+fma+tt*(xx[6]),xx[1]/100+fmb,0,0,xx[7], srd[t]/100+2);
+//drawimage(im[0],xx[0]/100+fmx+tt*(xx[6]),xx[1]/100+fmy,5,0,xx[7],10);
+drawimage(image[6],xx[0]/100+fmx+tt*(xx[6]),xx[1]/100+fmy,0,0,xx[7], srd[t]/100+2);
 }
 
 */
@@ -535,32 +536,32 @@ if (sa[t]-fx+sc[t]>=-10 && sa[t]-fx<=fxmax+1100){
 
 if (stype[t]==0){
 setcolor(40,200,40);
-fillrect((sa[t]-fx)/100+fma,(sb[t]-fy)/100+fmb, sc[t]/100, sd[t]/100);
-drawrect((sa[t]-fx)/100+fma,(sb[t]-fy)/100+fmb, sc[t]/100, sd[t]/100);
+fillrect((sa[t]-fx)/100+fmx,(sb[t]-fy)/100+fmy, sc[t]/100, sd[t]/100);
+drawrect((sa[t]-fx)/100+fmx,(sb[t]-fy)/100+fmy, sc[t]/100, sd[t]/100);
 }
 //土管
 if (stype[t]==1){
 setcolor(0,230,0);
-fillrect((sa[t]-fx)/100+fma,(sb[t]-fy)/100+fmb, sc[t]/100, sd[t]/100);
+fillrect((sa[t]-fx)/100+fmx,(sb[t]-fy)/100+fmy, sc[t]/100, sd[t]/100);
 setc0();
-drawrect((sa[t]-fx)/100+fma,(sb[t]-fy)/100+fmb, sc[t]/100, sd[t]/100);
+drawrect((sa[t]-fx)/100+fmx,(sb[t]-fy)/100+fmy, sc[t]/100, sd[t]/100);
 }
 //土管(下)
 if (stype[t]==2){
 setcolor(0,230,0);
-fillrect((sa[t]-fx)/100+fma,(sb[t]-fy)/100+fmb+1, sc[t]/100, sd[t]/100);
+fillrect((sa[t]-fx)/100+fmx,(sb[t]-fy)/100+fmy+1, sc[t]/100, sd[t]/100);
 setc0();
-drawline((sa[t]-fx)/100+fma,(sb[t]-fy)/100+fmb, (sa[t]-fx)/100+fma,(sb[t]-fy)/100+fmb+sd[t]/100);
-drawline((sa[t]-fx)/100+fma+sc[t]/100,(sb[t]-fy)/100+fmb, (sa[t]-fx)/100+fma+sc[t]/100,(sb[t]-fy)/100+fmb+sd[t]/100);
+drawline((sa[t]-fx)/100+fmx,(sb[t]-fy)/100+fmy, (sa[t]-fx)/100+fmx,(sb[t]-fy)/100+fmy+sd[t]/100);
+drawline((sa[t]-fx)/100+fmx+sc[t]/100,(sb[t]-fy)/100+fmy, (sa[t]-fx)/100+fmx+sc[t]/100,(sb[t]-fy)/100+fmy+sd[t]/100);
 }
 
 //土管(横)
 if (stype[t]==5){
 setcolor(0,230,0);
-fillrect((sa[t]-fx)/100+fma,(sb[t]-fy)/100+fmb+1, sc[t]/100, sd[t]/100);
+fillrect((sa[t]-fx)/100+fmx,(sb[t]-fy)/100+fmy+1, sc[t]/100, sd[t]/100);
 setc0();
-drawline((sa[t]-fx)/100+fma,(sb[t]-fy)/100+fmb, (sa[t]-fx)/100+fma+sc[t]/100,(sb[t]-fy)/100+fmb);
-drawline((sa[t]-fx)/100+fma,(sb[t]-fy)/100+fmb+sd[t]/100, (sa[t]-fx)/100+fma+sc[t]/100,(sb[t]-fy)/100+fmb+sd[t]/100);
+drawline((sa[t]-fx)/100+fmx,(sb[t]-fy)/100+fmy, (sa[t]-fx)/100+fmx+sc[t]/100,(sb[t]-fy)/100+fmy);
+drawline((sa[t]-fx)/100+fmx,(sb[t]-fy)/100+fmy+sd[t]/100, (sa[t]-fx)/100+fmx+sc[t]/100,(sb[t]-fy)/100+fmy+sd[t]/100);
 }
 
 
@@ -568,20 +569,20 @@ drawline((sa[t]-fx)/100+fma,(sb[t]-fy)/100+fmb+sd[t]/100, (sa[t]-fx)/100+fma+sc[
 if (stype[t]==51){
 if (sxtype[t]==0){
 for (t3=0;t3<=sc[t]/3000;t3++){
-drawimage(grap[1][1],(sa[t]-fx)/100+fma+29*t3,(sb[t]-fy)/100+fmb);
+drawimage(grap[1][1],(sa[t]-fx)/100+fmx+29*t3,(sb[t]-fy)/100+fmy);
 }}
 if (sxtype[t]==1 || sxtype[t]==2){
 for (t3=0;t3<=sc[t]/3000;t3++){
-drawimage(grap[31][1],(sa[t]-fx)/100+fma+29*t3,(sb[t]-fy)/100+fmb);
+drawimage(grap[31][1],(sa[t]-fx)/100+fmx+29*t3,(sb[t]-fy)/100+fmy);
 }}
 if (sxtype[t]==3 || sxtype[t]==4){
 for (t3=0;t3<=sc[t]/3000;t3++){for (t2=0;t2<=sd[t]/3000;t2++){
-drawimage(grap[65][1],(sa[t]-fx)/100+fma+29*t3,(sb[t]-fy)/100+29*t2+fmb);
+drawimage(grap[65][1],(sa[t]-fx)/100+fmx+29*t3,(sb[t]-fy)/100+29*t2+fmy);
 }}}
 
 if (sxtype[t]==10){
 for (t3=0;t3<=sc[t]/3000;t3++){
-drawimage(grap[65][1],(sa[t]-fx)/100+fma+29*t3,(sb[t]-fy)/100+fmb);
+drawimage(grap[65][1],(sa[t]-fx)/100+fmx+29*t3,(sb[t]-fy)/100+fmy);
 }}
 
 }//51
@@ -595,18 +596,18 @@ if (stagecolor==5){xx[29]=90;}
 
 for (t3=0;t3<=sc[t]/3000;t3++){
 if (sxtype[t]==0){
-drawimage(grap[5+xx[29]][1],(sa[t]-fx)/100+fma+29*t3,(sb[t]-fy)/100+fmb);
-if (stagecolor!=4){drawimage(grap[6+xx[29]][1],(sa[t]-fx)/100+fma+29*t3,(sb[t]-fy)/100+fmb+29);}
-else{drawimage(grap[5+xx[29]][1],(sa[t]-fx)/100+fma+29*t3,(sb[t]-fy)/100+fmb+29);}
+drawimage(grap[5+xx[29]][1],(sa[t]-fx)/100+fmx+29*t3,(sb[t]-fy)/100+fmy);
+if (stagecolor!=4){drawimage(grap[6+xx[29]][1],(sa[t]-fx)/100+fmx+29*t3,(sb[t]-fy)/100+fmy+29);}
+else{drawimage(grap[5+xx[29]][1],(sa[t]-fx)/100+fmx+29*t3,(sb[t]-fy)/100+fmy+29);}
 }
 if (sxtype[t]==1){
 for (t2=0;t2<=sd[t]/3000;t2++){
-drawimage(grap[1+xx[29]][1],(sa[t]-fx)/100+fma+29*t3,(sb[t]-fy)/100+fmb+29*t2);
+drawimage(grap[1+xx[29]][1],(sa[t]-fx)/100+fmx+29*t3,(sb[t]-fy)/100+fmy+29*t2);
 }}
 
 if (sxtype[t]==2){
   for (t2=0;t2<=sd[t]/3000;t2++){
-    drawimage(grap[5+xx[29]][1],(sa[t]-fx)/100+fma+29*t3,(sb[t]-fy)/100+fmb+29*t2);
+    drawimage(grap[5+xx[29]][1],(sa[t]-fx)/100+fmx+29*t3,(sb[t]-fy)/100+fmy+29*t2);
   }
 }
 
@@ -618,7 +619,7 @@ if (trap==1){
 if (stype[t]>=100 && stype[t]<=299){
 if (stagecolor==1 || stagecolor==3 || stagecolor==5)setc0();
 if (stagecolor==2 || stagecolor==4)setc1();
-drawrect((sa[t]-fx)/100+fma,(sb[t]-fy)/100+fmb, sc[t]/100, sd[t]/100);
+drawrect((sa[t]-fx)/100+fmx,(sb[t]-fy)/100+fmy, sc[t]/100, sd[t]/100);
 }}
 
 //ゴール
@@ -647,29 +648,29 @@ if (sa[t]-fx+sc[t]>=-10 && sa[t]-fx<=fxmax+1100){
 //入る土管(右)
 if (stype[t]==40){
 setcolor(0,230,0);
-fillrect((sa[t]-fx)/100+fma,(sb[t]-fy)/100+fmb+1, sc[t]/100, sd[t]/100);
+fillrect((sa[t]-fx)/100+fmx,(sb[t]-fy)/100+fmy+1, sc[t]/100, sd[t]/100);
 setc0();
-drawrect((sa[t]-fx)/100+fma,(sb[t]-fy)/100+fmb+1, sc[t]/100, sd[t]/100);
+drawrect((sa[t]-fx)/100+fmx,(sb[t]-fy)/100+fmy+1, sc[t]/100, sd[t]/100);
 }
 
 //とぶ土管
 if (stype[t]==50){
 setcolor(0,230,0);
-fillrect((sa[t]-fx)/100+fma+5,(sb[t]-fy)/100+fmb+30, 50, sd[t]/100-30);
+fillrect((sa[t]-fx)/100+fmx+5,(sb[t]-fy)/100+fmy+30, 50, sd[t]/100-30);
 setc0();
-drawline((sa[t]-fx)/100+5+fma,(sb[t]-fy)/100+fmb+30, (sa[t]-fx)/100+fma+5,(sb[t]-fy)/100+fmb+sd[t]/100);
-drawline((sa[t]-fx)/100+5+fma+50,(sb[t]-fy)/100+fmb+30, (sa[t]-fx)/100+fma+50+5,(sb[t]-fy)/100+fmb+sd[t]/100);
+drawline((sa[t]-fx)/100+5+fmx,(sb[t]-fy)/100+fmy+30, (sa[t]-fx)/100+fmx+5,(sb[t]-fy)/100+fmy+sd[t]/100);
+drawline((sa[t]-fx)/100+5+fmx+50,(sb[t]-fy)/100+fmy+30, (sa[t]-fx)/100+fmx+50+5,(sb[t]-fy)/100+fmy+sd[t]/100);
 
 setcolor(0,230,0);
-fillrect((sa[t]-fx)/100+fma,(sb[t]-fy)/100+fmb+1, 60, 30);
+fillrect((sa[t]-fx)/100+fmx,(sb[t]-fy)/100+fmy+1, 60, 30);
 setc0();
-drawrect((sa[t]-fx)/100+fma,(sb[t]-fy)/100+fmb+1, 60, 30);
+drawrect((sa[t]-fx)/100+fmx,(sb[t]-fy)/100+fmy+1, 60, 30);
 }
 
 //地面(ブロック)
 if (stype[t]==200){
 for (t3=0;t3<=sc[t]/3000;t3++){for (t2=0;t2<=sd[t]/3000;t2++){
-drawimage(grap[65][1],(sa[t]-fx)/100+fma+29*t3,(sb[t]-fy)/100+29*t2+fmb);
+drawimage(grap[65][1],(sa[t]-fx)/100+fmx+29*t3,(sb[t]-fy)/100+29*t2+fmy);
 }}
 }
 
@@ -881,10 +882,10 @@ if (blackx==1){zxon=0;}
 
 //DrawFormatString(10,10,GetColor(255,255,255),"X … %d",anobib[0]);
 
-}//if (main==1){
+}//if (mains==1){
 
 
-if (main==2){
+if (mains==2){
 
 setcolor(255,255,255);
 str("制作・プレイに関わった方々",240-13*20/2,xx[12]/100);
@@ -911,7 +912,7 @@ str("プレイしていただき　ありがとうございました〜",240-22*
 
 
 
-if (main==10){
+if (mains==10){
 
 setc0();
 fillrect(0,0,fxmax,fymax);
@@ -923,11 +924,11 @@ drawimage(grap[0][0],190,190);
 DrawFormatString(230,200,GetColor(255,255,255)," × %d",nokori);
 
 
-}//if (main==10){
+}//if (mains==10){
 
 
 //タイトル
-if (main==100){
+if (mains==100){
 
 setcolor(160,180,250);
 fillrect(0,0,fxmax,fymax);
@@ -948,7 +949,7 @@ drawimage(grap[6][1],29*t,14*29-12);
 setcolor(0,0,0);
 str("Enterキーを押せ!!",240-8*20/2,250);
 
-}//if (main==100){
+}//if (mains==100){
 
 
 
@@ -970,14 +971,14 @@ void Mainprogram(){
 stime=long(GetNowCount());
 
 
-if (ending==1)main=2;
+if (ending==1)mains=2;
 
 
 //キー
 key = GetJoypadInputState(DX_INPUT_KEY_PAD1);
 
 
-if (main==1 && tmsgtype==0){
+if (mains==1 && tmsgtype==0){
 
 
 if (zxon==0){
@@ -1049,7 +1050,7 @@ if (key & PAD_INPUT_DOWN){actaon[3]=1;}
 }
 
 //if (CheckHitKey(KEY_INPUT_F1)==1){end();}
-if (CheckHitKey(KEY_INPUT_F1)==1){main=100;}
+if (CheckHitKey(KEY_INPUT_F1)==1){mains=100;}
 //if (CheckHitKey(KEY_INPUT_Q)==1){mkeytm=0;}
 if (CheckHitKey(KEY_INPUT_O)==1){if (mhp>=1)mhp=0;if (stc>=5){stc=0;stagepoint=0;}}
 
@@ -1164,7 +1165,7 @@ if (mtype==200){
 if (mtm<=11){mc=0;md=0;}
 if (mtm==12){md=-1200;}
 if (mtm>=12){mc=0;}
-if (mtm>=100 || fast==1){zxon=0;main=10;mtm=0;mkeytm=0;nokori--;if (fast==1)mtype=0;}//mtm>=100
+if (mtm>=100 || fast==1){zxon=0;mains=10;mtm=0;mkeytm=0;nokori--;if (fast==1)mtype=0;}//mtm>=100
 }//mtype==200
 
 
@@ -1251,7 +1252,7 @@ if (mtm>=2 && mtm<=42){md=600;mmuki=1;}
 if (mtm>43 && mtm<=108){mc=300;}
 if (mtm==110){mb=-80000000;mc=0;}
 if (mtm==250){
-  stb++;stc=0;zxon=0;tyuukan=0;main=10;maintm=0;
+  stb++;stc=0;zxon=0;tyuukan=0;mains=10;maintm=0;
 }
 }//mtype==300
 
@@ -1285,7 +1286,7 @@ if (mtype==301 || mtype==302){
     if(mtype==301){
       ending = 1;
     }else{
-      sta++;stb=1;stc=0;zxon=0;tyuukan=0;main=10;maintm=0;
+      sta++;stb=1;stc=0;zxon=0;tyuukan=0;mains=10;maintm=0;
     }
   }
 
@@ -2952,11 +2953,11 @@ xx[1]=xx[2];if (ma>xx[1] && fzx<scrollx){xx[5]=ma-xx[1];ma=xx[1];fx+=xx[5];fzx+=
 
 
 
-}//if (main==1){
+}//if (mains==1){
 
 
 //スタッフロール
-if (main==2){
+if (mains==2){
 maintm++;
 
 xx[7]=46;
@@ -2988,21 +2989,21 @@ xx[10]+=1;
 for (t=0;t<=xx[7];t+=1){xx[12+t]-=100;}//t
 
 if (xx[30]==-200){bgmchange(oto[106]);}
-if (xx[30]<=-400){main=100;nokori=2;maintm=0;ending=0;}
+if (xx[30]<=-400){mains=100;nokori=2;maintm=0;ending=0;}
 
-}//main==2
+}//mains==2
 
 
-if (main==10){
+if (mains==10){
 maintm++;
 
 if (fast==1)maintm+=2;
-if (maintm>=30){maintm=0;main=1;zxon=0;}
-}//if (main==10){
+if (maintm>=30){maintm=0;mains=1;zxon=0;}
+}//if (mains==10){
 
 
 //タイトル
-if (main==100){
+if (mains==100){
 maintm++;xx[0]=0;
 if (maintm<=10){maintm=11;sta=1;stb=1;stc=0;over=0;}
 
@@ -3024,7 +3025,7 @@ if (CheckHitKey(KEY_INPUT_RETURN)==1){xx[0]=1;}
 if (CheckHitKey(KEY_INPUT_Z)==1){xx[0]=1;}
 
 if (xx[0]==1){
-main=10;zxon=0;maintm=0;
+mains=10;zxon=0;maintm=0;
 nokori=2;
 
 fast=0;trap=0;tyuukan=0;
@@ -3200,7 +3201,7 @@ void drawarc(int a,int b,int c,int d){DrawOval(a,b,c,d,color,FALSE);}
 void fillarc(int a,int b,int c,int d){DrawOval(a,b,c,d,color,TRUE);}
 
 //画像の読み込み
-int loadimage(string x){
+int loadimage(const TSTRING &x){
 //mgrap[a]=LoadGraph(b);
 return LoadGraph(x.c_str());
 }
@@ -3238,7 +3239,7 @@ DrawString(a,b,d,color);
 */
 
 //文字
-void str(string x,int a,int b){
+void str(const string &x,int a,int b){
 //char d[]="あ";
 DrawString(a,b,x.c_str(),color);
 //DrawString(10,10,xs[3].c_str(),color);
@@ -3250,7 +3251,7 @@ xx[2]=4;
 
 /*
 //数値を文字に変換
-void strchange(string x,int a){
+void strchange(TSTRING x,int a){
 }
 */
 
@@ -5364,7 +5365,7 @@ drawrect(xx[1],xx[2]+tmsgy/100,360,xx[5]);
 
 }//ttmsg
 
-void txmsg(string x,int a){
+void txmsg(const TSTRING &x,int a){
 int xx=6;
 
 str(x,60+xx,40+xx+a*24);
