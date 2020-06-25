@@ -41,6 +41,6 @@ The following assumes that you are using TDM-GCC64 9.2 with DxLib version
 - [x] Use Unicode string literal, make the game's title displays normally on
       Windows with any character sets
 - [ ] fix bugs
-  - [ ] stars disappear in the begining of world 3 sometimes
-  - [ ] save points in world 3 works incorrectly
-  - [ ] super star in world 2-2 fly straight up
+  - [ ] stars disappear in the begining of 1-3 sometimes
+  - [x] save points in 1-3 works incorrectly
+  - [ ] super star in world 1-2-2 fly straight up
