@@ -17,10 +17,13 @@ $(TARGET): $(OBJS)
 src/resource.o: src/resource.rc
 	$(RC) $< -o $@
 
-src/resource.o: 
+src/resource.o: src/icon.ico
 src/main.o:     src/main.h $(DXLIB)/DxLib.h
 src/loadg.o:    $(DXLIB)/DxLib.h
 
-.PHONY: clean
+.PHONY: clean run
 clean:
 	-rm -rf $(TARGET) $(OBJS)
+
+run:$(TARGET)
+	./$(TARGET)
