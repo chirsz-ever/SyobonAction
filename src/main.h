@@ -9,54 +9,54 @@ using namespace std;
 void loadg();
 
 
-//String 使用
+// std::tring is used
 
-//プログラム中
-//main-10
-//タイトル-100
+// During the program
+// main-10
+// title-100
 int mains=100,maintm=0;
 
-//ステージ
+// Stage
 int stagecolor=0;
 int sta=1,stb=4,stc=0;
 
-//クイック
+// Quick (high speed?)
 int fast=1;
 
-//トラップ表示
+// Trap display
 int trap=1;
 
-//中間ゲート
+// Intermediate gate (save point)
 int tyuukan=0;
 
 
-//スタッフロール
+// Stuff roll
 int ending=0;
 
 
-//ステージ読み込みループ(いじらない)
+// Stage read loop (do not touch)
 int stagerr,stagepoint;
-//オーバーフローさせる
+// Overflow
 int over=0;
 
-//ステージスイッチ
+// Stage switch
 int stageonoff=0;
 
 
-//メインプログラム
+// Main program
 void Mainprogram();
 void rpaint();
 int maint;
 
 
-//サブクラス
-//(ウエイト系
+// Subclass (utils?)
+// (Weight class (or wait, "synchronous functions"?)
 static void wait(int interval);
 static void wait2(long stime, long etime,int FLAME_TIME);
 static int rand(int Rand);
 void end();
 
-//描画
+// Draw
 int color;
 void setfont(int a);
 void setcolor(int red, int green, int blue);
@@ -80,11 +80,11 @@ void setno();
 int oto[151];
 void ot(int x);void bgmchange(int x);
 
-//文字
+// Text
 void str(const string &c,int a,int b);
 
 
-//)
+// )
 
 void stagecls();
 void stage();
@@ -94,27 +94,27 @@ void stagep();
 
 
 
-//1-ステージ
-//10-ステージ前
+// 1-stage
+// 10-before the stage
 //
 
 
 
-//ループ
+// loop (loop variables?)
 int t,tt,t1,t2,t3,t4;
 
 
-//初期化
+// Initialize
 int zxon,zzxon;
 
-//キーコンフィグ
+// Key config
 int key,keytm;
 
-//三角関数
+// Trigonometric function
 double pai=3.1415926535;
 
 
-//地面
+// Ground
 #define smax 31
 int sx,sco;
 int sa[smax],sb[smax],sc[smax],sd[smax],stype[smax],sxtype[smax],sr[smax];
@@ -122,7 +122,7 @@ int sgtype[smax];
 
 
 
-//プレイヤー
+// Player
 int mainmsgtype;
 int ma,mb,mnobia,mnobib,mhp;
 int mc,md,macttype,atkon,atktm,mactsok,msstar,nokori=2,mactp,mact;
@@ -132,7 +132,7 @@ int mzimen,mrzimen,mkasok,mmuki,mmukitm,mjumptm,mkeytm,mcleartm;
 int mmutekitm,mmutekion;
 int mztm,mztype;
 int actaon[7];
-//メッセージ
+// Message
 int mmsgtm,mmsgtype;
 
 int mascrollmax=21000;//9000
@@ -140,7 +140,7 @@ int mascrollmax=21000;//9000
 
 
 
-//ブロック
+// Block
 void tyobi(int x,int y,int type);
 void brockbreak(int t);
 #define tmax 641
@@ -148,12 +148,12 @@ int tco;
 int ta[tmax],tb[tmax],tc[tmax],td[tmax],thp[tmax],ttype[tmax];
 int titem[tmax],txtype[tmax];
 
-//メッセージブロック
+// Message block
 int tmsgtm,tmsgtype,tmsgx,tmsgy,tmsgnobix,tmsgnobiy,tmsg;
 void ttmsg();void txmsg(const string &x,int a);
 void setfont(int x,int y);
 
-//効果を持たないグラ
+// Ineffective Gra (?効果を持たないグラ)
 void eyobi(int xa,int xb,int xc,int xd,int xe,int xf,int xnobia,int xnobib,int xgtype,int xtm);
 #define emax 201
 int eco;
@@ -163,7 +163,7 @@ int egtype[emax];
 
 
 
-//敵キャラ
+// Enemy character
 void ayobi(int xa,int xb,int xc,int xd,int xnotm,int xtype,int xxtype);
 void tekizimen();
 #define amax 24
@@ -176,21 +176,21 @@ int anotm[amax],anx[160],any[160];
 int atm[amax],a2tm[amax];
 int amsgtm[amax],amsgtype[amax];
 
-//敵出現
+// Enemy appearance
 #define bmax 81
 int bco;
 int ba[bmax],bb[bmax],btm[bmax];
 int btype[bmax],bxtype[bmax],bz[bmax];
 
 
-//背景
+// Background
 #define nmax 41
 int nxxmax,nco;
 int na[nmax],nb[nmax],nc[nmax],nd[nmax],ntype[nmax];
 int ne[nmax],nf[nmax],ng[nmax],nx[nmax];
 
 
-//リフト
+// Lift
 #define srmax 21
 int srco;
 int sra[srmax],srb[srmax],src[srmax],srd[srmax],sre[srmax],srf[srmax];
@@ -202,30 +202,30 @@ int srsok[srmax],srmovep[srmax],srmove[srmax];
 
 
 
-//スクロール範囲
+// Scroll range
 int fx=0,fy=0,fzx,fzy,scrollx,scrolly;
-//全体のポイント
+// Overall point
 int fmx=0,fmy=0;
-//強制スクロール
+// Forced scroll
 int kscroll=0;
-//画面サイズ(ファミコンサイズ×2)(256-224)
+// Screen size (NES size × 2) (256-224)
 int fxmax=48000,fymax=42000;
 
 
 
-//ステージ
+// Satge
 byte stagedate[17][2001];
 
-//画面黒
+// Screen black
 int blacktm=1,blackx=0;
 
 
 
-//自由な値
+// Free values
 int xx[91];
 double xd[11];
 string xs[31];
 
 
-//タイマー測定
+// Timer measurement
 long stime;
