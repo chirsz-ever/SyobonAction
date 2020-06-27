@@ -8,22 +8,32 @@ LDFLAGS  +=  -lDxLibW -lDxUseCLibW -lDxDrawFunc -ljpeg -lpng -lzlib -ltiff\
              -lopusfile -lopus -lsilk_common -lcelt
 LDFLAGS  +=  -mwindows
 
-TARGET   = syobon_action.exe
-OBJS     = src/main.o src/loadg.o src/resource.o
+BUILDDIR  = build
+TARGET    = syobon_action.exe
+OBJS      = main.o loadg.o resource.o
+BUILDOBJS = $(OBJS:%.o=$(BUILDDIR)/%.o)
 
-$(TARGET): $(OBJS)
+all: $(BUILDDIR) $(TARGET)
+
+${BUILDDIR}:
+	@if [ ! -d $@ ]; then mkdir -p $@; fi;
+
+$(TARGET): $(BUILDOBJS)
 	$(CXX) -o $@ $^ $(LDFLAGS)
 
-src/resource.o: src/resource.rc
+$(BUILDDIR)/resource.o: src/resource.rc
 	$(RC) $< -o $@
 
-src/resource.o: src/icon.ico
-src/main.o:     src/main.h $(DXLIB)/DxLib.h
-src/loadg.o:    $(DXLIB)/DxLib.h
+$(BUILDDIR)/%.o: src/%.cpp
+	$(CXX) -c $< -o $@  $(CXXFLAGS)
 
-.PHONY: clean run
+$(BUILDDIR)/resource.o: src/icon.ico
+$(BUILDDIR)/main.o:     src/main.h $(DXLIB)/DxLib.h
+$(BUILDDIR)/loadg.o:    $(DXLIB)/DxLib.h
+
+.PHONY: clean run all
 clean:
-	-rm -rf $(TARGET) $(OBJS)
+	-rm -rf $(TARGET) $(BUILDOBJS)
 
 run:$(TARGET)
 	./$(TARGET)
