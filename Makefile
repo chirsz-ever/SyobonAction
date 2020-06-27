@@ -1,9 +1,9 @@
 #CXX=g++
 RC       =   windres
 DXLIB    =   ./dxlib
-CXXFLAGS =   -I$(DXLIB) -DUNICODE -D_UNICODE
+CXXFLAGS =   -I$(DXLIB)
 LDFLAGS  =   -L$(DXLIB)
-LDFLAGS  +=  -lDxLibW -lDxUseCLibW -lDxDrawFunc -ljpeg -lpng -lzlib -ltiff\
+LDFLAGS  +=  -lDxLib -lDxUseCLib -lDxDrawFunc -ljpeg -lpng -lzlib -ltiff\
              -ltheora_static -lvorbis_static -lvorbisfile_static -logg_static\
              -lopusfile -lopus -lsilk_common -lcelt
 LDFLAGS  +=  -mwindows
