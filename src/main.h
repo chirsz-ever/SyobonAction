@@ -69,7 +69,7 @@ void fillrect(int a,int b,int c,int d);
 void drawarc(int a,int b,int c,int d);
 void fillarc(int a,int b,int c,int d);
 int grap[161][8],mgrap[51];
-int loadimage(const TSTRING &b);
+int loadimage(const string &b);
 int loadimage(int a,int x,int y,int r,int z);
 int mirror;
 void drawimage(int mx,int a,int b);
@@ -81,7 +81,7 @@ int oto[151];
 void ot(int x);void bgmchange(int x);
 
 //文字
-void str(const TSTRING &c,int a,int b);
+void str(const string &c,int a,int b);
 
 
 //)
@@ -150,7 +150,7 @@ int titem[tmax],txtype[tmax];
 
 //メッセージブロック
 int tmsgtm,tmsgtype,tmsgx,tmsgy,tmsgnobix,tmsgnobiy,tmsg;
-void ttmsg();void txmsg(const TSTRING &x,int a);
+void ttmsg();void txmsg(const string &x,int a);
 void setfont(int x,int y);
 
 //効果を持たないグラ
@@ -224,7 +224,7 @@ int blacktm=1,blackx=0;
 //自由な値
 int xx[91];
 double xd[11];
-TSTRING xs[31];
+string xs[31];
 
 
 //タイマー測定

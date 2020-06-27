@@ -112,13 +112,13 @@ drawimage(grap[ntype[t]][4],xx[0]/100-5,xx[1]/100);
 
 //51
 if (ntype[t]==100){
-DrawFormatString(xx[0]/100+fmx,xx[1]/100+fmy,GetColor(255,255,255), "51");
+DrawFormatString(xx[0]/100+fmx,xx[1]/100+fmy,GetColor(255,255,255),"51");
 }
 
 if (ntype[t]==101)
-DrawFormatString(xx[0]/100+fmx,xx[1]/100+fmy,GetColor(255,255,255), "ゲームクリアー");
+DrawFormatString(xx[0]/100+fmx,xx[1]/100+fmy,GetColor(255,255,255),"ゲームクリアー");
 if (ntype[t]==102)
-DrawFormatString(xx[0]/100+fmx,xx[1]/100+fmy,GetColor(255,255,255), "プレイしてくれてありがとー");
+DrawFormatString(xx[0]/100+fmx,xx[1]/100+fmy,GetColor(255,255,255),"プレイしてくれてありがとー");
 
 }}//t
 
@@ -3201,7 +3201,7 @@ void drawarc(int a,int b,int c,int d){DrawOval(a,b,c,d,color,FALSE);}
 void fillarc(int a,int b,int c,int d){DrawOval(a,b,c,d,color,TRUE);}
 
 //画像の読み込み
-int loadimage(const TSTRING &x){
+int loadimage(const string &x){
 //mgrap[a]=LoadGraph(b);
 return LoadGraph(x.c_str());
 }
@@ -3251,7 +3251,7 @@ xx[2]=4;
 
 /*
 //数値を文字に変換
-void strchange(TSTRING x,int a){
+void strchange(string x,int a){
 }
 */
 
@@ -5365,7 +5365,7 @@ drawrect(xx[1],xx[2]+tmsgy/100,360,xx[5]);
 
 }//ttmsg
 
-void txmsg(const TSTRING &x,int a){
+void txmsg(const string &x,int a){
 int xx=6;
 
 str(x,60+xx,40+xx+a*24);
