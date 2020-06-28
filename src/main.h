@@ -153,7 +153,7 @@ int tmsgtm,tmsgtype,tmsgx,tmsgy,tmsgnobix,tmsgnobiy,tmsg;
 void ttmsg();void txmsg(const string &x,int a);
 void setfont(int x,int y);
 
-// Ineffective Gra (?効果を持たないグラ)
+// Ineffective Graphics
 void eyobi(int xa,int xb,int xc,int xd,int xe,int xf,int xnobia,int xnobib,int xgtype,int xtm);
 #define emax 201
 int eco;
