@@ -30,7 +30,7 @@ int trap=1;
 int tyuukan=0;
 
 
-// Stuff roll
+// Staff roll
 int ending=0;
 
 
