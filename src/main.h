@@ -9,7 +9,7 @@ using namespace std;
 void loadg();
 
 
-// std::tring is used
+// std::string is used
 
 // During the program
 // main-10
