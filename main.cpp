@@ -2,7 +2,7 @@
 
 // プログラムは WinMain から始まります
 int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,LPSTR lpCmdLine, int nCmdShow ){
-
+SetUseCharCodeFormat(DX_CHARCODEFORMAT_UTF8);
 //画面サイズ設定
 SetGraphMode( fxmax/100 , fymax/100 , 16 ) ;
 //
