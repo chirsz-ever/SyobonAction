@@ -5,7 +5,8 @@ CXXFLAGS =   -I$(DXLIB)
 LDFLAGS  =   -L$(DXLIB)
 LDFLAGS  +=  -lDxLib -lDxUseCLib -lDxDrawFunc -ljpeg -lpng -lzlib -ltiff\
              -ltheora_static -lvorbis_static -lvorbisfile_static -logg_static\
-             -lopusfile -lopus -lsilk_common -lcelt
+             -lopusfile -lopus -lsilk_common -lcelt\
+			 -lbulletdynamics -lbulletcollision -lbulletmath
 LDFLAGS  +=  -mwindows
 
 BUILDDIR  = build
