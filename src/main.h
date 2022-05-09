@@ -4,6 +4,8 @@
 #include <string>
 using namespace std;
 
+#define byte BYTE
+
 #define SHORT
 
 void loadg();
