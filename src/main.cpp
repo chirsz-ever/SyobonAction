@@ -1,7 +1,7 @@
 #include "main.h"
 
-// プログラムは main から始まります
-int main(int argc, char const *argv[]) {
+// プログラムは WinMain から始まります
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,LPSTR lpCmdLine, int nCmdShow ){
 //use UTF-8 encoding
 SetUseCharCodeFormat(DX_CHARCODEFORMAT_UTF8);
 //applog無効
