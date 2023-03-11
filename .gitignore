@@ -6,3 +6,6 @@ Log.txt
 
 /dxlib
 /build
+/3rdparty/*/
+/3rdparty/DxLib*.zip
+/cmake-build-*

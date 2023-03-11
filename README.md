@@ -6,7 +6,7 @@ The developer of Word 5 to 9: Bluvel [link](http://yaruki0.sakura.ne.jp/programs
 
 The original "README" file ("りーどみぃ.txt") is converted into UTF-8 in [README.ja.txt](README.ja.txt).
 
-This version is aim to fix bugs and run the game on systems other than Windows.
+This version is aim to keep a copy of compilable source code.
 
 ## Operation Explanation
 
@@ -24,17 +24,18 @@ You can play on any stage by pressing <kbd>1</kbd>~<kbd>9</kbd> at the time of t
 
 ## Build Instructions
 
-This source code supports Mingw on Windows so far. 
-[TDM-GCC](https://jmeubank.github.io/tdm-gcc/) is recommended.
+This source code supports MinGW and MSVC on Windows. [TDM-GCC](https://jmeubank.github.io/tdm-gcc/) is recommended.
 
 Building this game dependents on [DxLib](https://dxlib.xsrv.jp/).
 
-The following assumes that you are using TDM-GCC64 9.2 with DxLib version
-"7_3_0_x86_64_w64_win32_seh_rt_v5_rev0".
+[CMake](https://cmake.org) is needed to build the project. The following is the instructions:
+- Install CMake.
+- Run CMake configuration command in this project directory. For example, if using TDM-GCC, you need to include the TDM-GCC binary PATH to your PATH and run `cmake . -B cmake-build-msys2 -G "MinGW Makefiles"`.
+- Build the proect. With the above example, run `cmake --build cmake-build-msys2`.
 
-- Make a new subdictory named "dxlib" in the project foler and copy all files of 
-  "7_3_0_x86_64_w64_win32_seh_rt_v5_rev0" to it.
-- Run `mingw32-make` in the terminal in the project foler.
+Specially, this game support VC6:
+- Start CMD, run `VC98\Bin\VCVARS32.BAT` to setup the VC6 environment.
+- run `build-vc6.bat` in the project directory.
 
 ## TODO List
 
