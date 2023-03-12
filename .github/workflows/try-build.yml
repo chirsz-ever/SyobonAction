@@ -1,0 +1,52 @@
+name: try build project
+
+on: [push, pull_request]
+
+jobs:
+  try-build-msvc:
+    strategy:
+      matrix:
+        arch: [Win32, x64]
+    env:
+      build_dir: cmake-build-vs2022-${{ matrix.arch }}
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v3
+      - name: Try build MSVC ${{ matrix.arch }}
+        run: |
+          mkdir ${{ env.build_dir }}
+          cmake . -B ${{ env.build_dir }} -G "Visual Studio 17 2022" -A ${{ matrix.arch }}
+          cmake --build ${{ env.build_dir }}
+
+  try-build-mingw:
+    runs-on: windows-2022
+    env:
+      build_dir: cmake-build-mingw
+    steps:
+      - uses: actions/checkout@v3
+      - name: Try build with MinGW
+        run: |
+          mkdir ${{ env.build_dir }}
+          cmake . -B ${{ env.build_dir }} -G "MinGW Makefiles"
+          cmake --build ${{ env.build_dir }}
+
+  try-build-mingw-msys2:
+    runs-on: windows-2022
+    env:
+      build_dir: cmake-build-msys2
+    steps:
+      - uses: actions/checkout@v3
+      - uses: msys2/setup-msys2@v2
+        with:
+          msystem: mingw64
+          release: false
+          install: >-
+            base-devel
+            mingw-w64-x86_64-toolchain
+            mingw-w64-x86_64-cmake
+      - name: Try build on MSYS2
+        shell: msys2 {0}
+        run: |
+          mkdir ${{ env.build_dir }}
+          cmake . -B ${{ env.build_dir }} -G "MSYS Makefiles"
+          cmake --build ${{ env.build_dir }}
