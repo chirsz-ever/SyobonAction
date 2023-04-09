@@ -40,6 +40,8 @@ if (NOT DEFINED DXLIB_PATH)
         message("downloading ${DXLIB_URL} to ${CMAKE_CURRENT_LIST_DIR}...")
         FetchContent_Populate(dxlib)
     endif()
+else ()
+    get_filename_component(DXLIB_PATH ${DXLIB_PATH} ABSOLUTE)
 endif ()
 
 message("use DXLIB_PATH=${DXLIB_PATH}")
